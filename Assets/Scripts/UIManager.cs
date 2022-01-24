@@ -84,8 +84,6 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator FadeOutAnswersGrid_CO(float fadeSeconds)
     {
-        DisableAnswerButtons();
-
         for (float i = fadeSeconds; i >= 0f; i -= Time.deltaTime)
         {
             canvasgroupAnswers.alpha = i;
@@ -96,14 +94,13 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator FadeOutOneAnswer_CO(GameObject answer, float fadeSeconds)
     {
-        DisableAnswerButtons();
-
         var canvasgroupAnswer = answer.GetComponent<CanvasGroup>();
         for (float i = fadeSeconds; i >= 0f; i -= Time.deltaTime)
         {
             canvasgroupAnswer.alpha = i;
             yield return null;
         }
+        answer.GetComponent<Button>().interactable = false;
         canvasgroupAnswer.alpha = 0f;
 
         EnableAnswerButtons();
@@ -111,7 +108,7 @@ public class UIManager : MonoBehaviour
 
     public void MarkSolution(string solution)
     {
-        foreach(Transform answerButton in answersGrid.transform)
+        foreach (Transform answerButton in answersGrid.transform)
         {
             var answerText = answerButton.GetChild(0).GetComponent<Text>();
             if (solution == answerText.text) MarkCorrect(answerButton.gameObject);
@@ -148,6 +145,7 @@ public class UIManager : MonoBehaviour
     }
     public void InputClick(Text answerText)
     {
+        DisableAnswerButtons();
         gameManager.InputPlayer(answerText);
     }
 
