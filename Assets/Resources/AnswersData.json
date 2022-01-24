@@ -1,0 +1,44 @@
+{
+  "solutionsdata": [
+    {
+      "answer": "0",
+      "question": "Cero"
+    },
+    {
+      "answer": "1",
+      "question": "Uno"
+    },
+    {
+      "answer": "2",
+      "question": "Dos"
+    },
+    {
+      "answer": "3",
+      "question": "Tres"
+    },
+    {
+      "answer": "4",
+      "question": "Cuatro"
+    },
+    {
+      "answer": "5",
+      "question": "Cinco"
+    },
+    {
+      "answer": "6",
+      "question": "Seis"
+    },
+    {
+      "answer": "7",
+      "question": "Siete"
+    },
+    {
+      "answer": "8",
+      "question": "Ocho"
+    },
+    {
+      "answer": "9",
+      "question": "Nueve"
+    }
+  ]
+}
